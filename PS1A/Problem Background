@@ -1,0 +1,34 @@
+** Prelude
+
+Due to a hereditary disease your lecturer Ket Fah was born with called Hemophilia, he is quite acquainted with the Emergency room at the hospital and other situations related to his disability. This PS and most of the following PS will be real life problems adapted (not 100% accurate) from these situations. Hopefully this will help CS2010 students come away with a better understanding of the situation of handicapped individuals.
+
+** Story
+
+During his many visits to the emergency room at the hospital, Ket Fah will have to wait for the doctor in charge or the housemen working during that particular shift to attend to him. Sometimes the wait is long and sometimes it can be short. After a while he observed that before being sent into the emergency room, the nurse will actually make a preliminary assessment and determine the "emergency level" of the case (a colored sticker representing the level is then pasted on the patient). If the level is determined to be low, then other more urgent cases will be attended to first. If the level is determined to be high, then the case will be given a higher priority. This had to be done due to the shortage of doctors and the high number of cases that can occur at any given time.
+
+Roughly the emergency levels can be classified from level 30 to 100 (made up !), where 100 is highest emergency level and 30 is the lowest. After having their initial assessment, the patient will be wheeled into the emergency and hooked up to machines that will monitor their heart rate etc. Periodically, the nurses will check on the patient to update their emergency level. For example a patient coming in with complaints of chest discomfort might initially have an emergency level of 50, but when he suddenly has difficulties in breathing, his level might be bumped up to 100.
+
+After a patient has been seen by the doctor, he/she will be either warded in the hospital or given treatment and allowed to go home. In either case, they will be removed from the emergency room.
+
+** The Actual Problem Description
+
+Given the names of N patients admitted into the emergency room, their initial emergency level, and subsequent updates of their emergency level, determine which patient the only doctor on duty (we assume here there is only one) has to give his/her most attention to.
+
+A patient with higher emergency level will have higher priority. If there are more than one patient with the same highest emergency level, this only doctor will give priority to the patient who arrived at the hospital earlier.
+
+The skeleton program EmergencyRoom.java (click to view) that can handle all input/output details is already written for you.
+
+You just need to implement four more methods/functions:
+
+void ArriveAtHospital(String patientName, int emergencyLvl)
+- Insert this patientName and his/her initial emergency level (emergencyLvl) upon arrival at hospital into a suitable data structure of your choice.
+patientName is a String that contains only uppercase alphabets with length between 1 to 15 characters.
+- The patient names are all unique.
+emergency level is an integer between [30..100].
+void UpdateEmergencyLvl(String patientName, int incEmergencyLvl)
+- emergency level can only go up to emergencyLvl = 100 and our test data will ensure that this method will not cause a patientName to have emergency level greater than 100.
+void Treat(String patientName)
+- Upon calling this method, we assume the patientName will have been treated by the doctore and no longer need to be in the emergency room.
+It is guaranteed that before calling this method, patientName has arrived at the hospital.
+String Query() Query your data structure and report the name of the patient that the only doctor on duty has to give the most attention to.
+- If there is no more patient to be taken care of, return a String: "The emergency room is empty".
